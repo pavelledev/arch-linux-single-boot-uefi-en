@@ -94,8 +94,8 @@ exit
 ping archlinux.org
 ```
 
-If you receive packets, your internet is working.
-Press **CTRL + C** to stop the pinging proccess.
+> If you receive packets, your internet is working.
+> Press **CTRL + C** to stop the pinging proccess.
 
 
 ### Step 3: Enable Network time synchronization
@@ -324,7 +324,7 @@ vim /etc/hosts
 passwd
 ```
 
-- Enter the root password and repeat it *(it will be invisible while typing)*.
+> Enter the root password and repeat it *(it will be invisible while typing)*.
 
 
 ### Step 10: Create an user account
