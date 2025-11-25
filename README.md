@@ -20,3 +20,77 @@ Most Linux commands support Tab completion:
 - If multiple matches exist, press `TAB` twice to show all possible completions, or press `TAB` repeatedly to cycle through the suggestions.
 
 This helps prevent mistakes and speeds up the installation process. Note that not all commands support Tab completion.
+
+
+### Step 1: Check if the system is using UEFI
+
+```bash
+ls /sys/firmware/efi
+```
+
+If the system returns **No such file or directory**, it means the computer is booted in **Legacy (BIOS)** or may not support **UEFI**.
+
+
+### Step 2 (Optional): Connect to a Wireless Network (Wi-Fi)
+
+If you are using a cable connection (Desktops/PC), you can skip this step.
+
+#### 2.1 Check if the Wi-Fi device is blocked
+
+```bash
+rfkill
+```
+
+If the Wi-Fi section (`wlan`) is **hard-blocked**, you need to use the physical switch button that the device provide (i don't know why some device has it) 
+
+If it is **soft-blocked** only, you can unblock it with the following command:
+
+```bash
+rfkill unblock wlan
+```
+
+#### 2.2 Enter the iwd Wi-Fi tool
+
+```bash
+iwctl
+```
+
+List available wireless device:
+
+```text
+device list
+```
+
+Choose the wireless device shown in the list (commonly `wlan0`), from this point onward it, `wlan0` will be used in all commands. If your device name is different, make sure to replace `wlan0` with your actual device.
+
+#### 2.3 Scan and connect to a Wi-Fi network
+
+List available networks:
+
+```text
+station wlan0 get-networks
+```
+
+Connect to your Wi-Fi network (please replace `YourWifiName` with the name of the Wi-Fi you are trying to connect to):
+
+```text
+station wlan0 connect "YourWifiName"
+```
+
+Enter the Wi-Fi password when prompt, then press **ENTER**.
+
+Exit iwd (iwctl):
+
+```text
+exit
+```
+
+#### 2.4 Verify the internet connection
+
+```bash
+ping archlinux.org
+```
+
+If you receive packets, your internet is working.
+Press **CTRL + C** to stop the pinging proccess.
+
