@@ -63,7 +63,7 @@ List available wireless device:
 device list
 ```
 
-Choose the wireless device shown in the list (commonly `wlan0`), from this point onward it, `wlan0` will be used in all commands. If your device name is different, make sure to replace `wlan0` with your actual device.
+> Choose the wireless device shown in the list (commonly `wlan0`), from this point onward it, `wlan0` will be used in all commands. If your device name is different, make sure to replace `wlan0` with your actual device.
 
 #### 2.3 Scan and connect to a Wi-Fi network
 
