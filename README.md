@@ -94,3 +94,45 @@ ping archlinux.org
 If you receive packets, your internet is working.
 Press **CTRL + C** to stop the pinging proccess.
 
+
+### Step 3: Identify the main storage device
+> Also commonly known as SSD, HDD,.... I will also refer to them as disk, drive.
+
+List all storage devices:
+
+```bash
+lsblk
+```
+
+Your primary drive is usually named something like `nvme0n1`, `sda`, `sdb`,.... If you are using an **NVMe SSD**, it will typically appear as `nvme0n1`. If you are using a SATA SSD or HDD, it will usually appear as `sda`.
+
+### Step 4: Partition the Disk
+**(Please read the entire step before attempting!)**
+
+Open the partitioning tool:
+
+```bash
+cfdisk /dev/your-main-disk
+```
+
+Please replace the `your-main-disk` with the disk you identified in **Step 3** (`nvme0n1` or `sda`,...). If you are prompted, please select **GPT** as the partition table.
+
+#### How to use the cfdisk:
+
+- Use the **ARROW KEYS** to navigate.
+- Select **Free Space -> New** to create a new partition.
+- Enter the desired size (e.g., `500M`, `30G`).
+- Select the new partition -> **Type** to set the partition type.
+- After creating all partitions and adjusting the correct type, select **Write**, type `yes` and press **ENTER**.
+- Select **Quit** to exit `cfdisk`.
+
+#### Suggested partitions layout
+
+| Partition | Size | Type |
+|-----------|------|------|
+| nvme0n1p1, sda1,... | 512M | EFI System |
+| nvme0n1p2, sda2,... | 4G/8G | Linux Swap |
+| nvme0n1p3, sda3,... | Remaining space | Linux Filesystem |
+
+> **Tips:** If you don't plan to use hibernation, you can keep the swap partition at **4-8GB**. If you want to enable hibernation, set the swap size to **at least double your RAM** (e.g., 16GB RAM -> 32GB swap).
+
