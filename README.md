@@ -35,8 +35,7 @@ If the system returns **No such file or directory**, it means the computer is bo
 
 
 ### Step 2 (Optional): Connect to a Wireless Network (Wi-Fi)
-
-If you are using a cable connection (Desktops/PC), you can skip this step.
+> If you are using a cable connection (Desktops/PC), you can skip this step.
 
 #### 2.1 Check if the Wi-Fi device is blocked
 
