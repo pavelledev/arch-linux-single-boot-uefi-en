@@ -12,7 +12,7 @@
 **Important:** Linux commands are powerful. A single typo can cause the installation to fail. Please read carefully and type exactly as shown.
 All commands are provided in separate code blocks. If a command changes, it will appear in its own new block to avoid confusion.
 
-## Tips
+## Tips:
 
 ### Using Tab Completion
 Most Linux commands support Tab completion:
@@ -23,6 +23,7 @@ Most Linux commands support Tab completion:
 
 This helps prevent mistakes and speeds up the installation process. Note that not all commands support Tab completion.
 
+## Step-by-Step Arch Linux UEFI Installation
 
 ### Step 1: Check if the system is using UEFI
 
