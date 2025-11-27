@@ -184,7 +184,7 @@ swapon /dev/your-swap-partition
 mkfs.ext4 /dev/your-root-partition
 ```
 
-> Replace `/dev/your-root-partition` with your Root partition in **Step 4** (e.g., `/dev/nvme0n1p2`, `/dev/sda2`,...)
+> Replace `/dev/your-root-partition` with your Root partition in **Step 4** (e.g., `/dev/nvme0n1p3`, `/dev/sda3`,...)
 > **Tips:** Please double-check that you are formatting the correct partitions to avoid errors and data loss.
 
 
